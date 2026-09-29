@@ -1,0 +1,8 @@
+{
+  "name": "Parfums de Fête",
+  "description": "Coffrets cadeaux de Noël, parfums et soins au karité · Cotonou",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
