@@ -89,22 +89,6 @@ p{margin:0 0 1em}
 .mobile-nav-b a:hover,.mobile-nav-b a[aria-current="page"]{background:var(--surface);border-color:var(--line);color:var(--acc-text,var(--acc))}
 .mobile-nav-f{padding:1.2rem;border-top:1px solid var(--line);display:grid;gap:.6rem;background:var(--surface)}
 
-/* mobile bottom bar */
-.mobile-bar{position:fixed;bottom:0;left:0;right:0;z-index:42;display:none;background:rgba(245,239,230,.98);backdrop-filter:saturate(1.4) blur(12px);border-top:1px solid var(--line);padding:.35rem .5rem calc(.35rem + env(safe-area-inset-bottom));justify-content:space-around;align-items:center;box-shadow:0 -6px 22px rgba(0,0,0,.08)}
-.mbar-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:none;border:none;color:var(--fg);font-size:.68rem;font-weight:700;text-decoration:none;padding:.3rem .45rem;min-width:52px;cursor:pointer}
-.mbar-item svg{width:20px;height:20px;color:var(--sec);transition:transform .15s}
-.mbar-item:active svg{transform:scale(1.15)}
-.mbar-item.active,.mbar-item:hover{color:var(--acc-text,var(--acc))}
-.mbar-item.active svg{color:var(--acc)}
-.mbar-cart{position:relative}
-.mbar-cart .cart-count{position:absolute;top:-6px;right:-10px;min-width:18px;height:18px;font-size:.65rem;line-height:1}
-@media (max-width:768px){
-  .mobile-bar{display:flex}
-  body{padding-bottom:calc(4rem + env(safe-area-inset-bottom))}
-  .wa-float{bottom:calc(5rem + env(safe-area-inset-bottom))}
-  body.on-pdp .mobile-bar{display:none}
-}
-
 /* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;border-radius:var(--btn-r,10px);padding:.95rem 1.5rem;font-weight:800;font-size:1rem;text-decoration:none;transition:transform .15s,box-shadow .15s,background .15s;min-height:48px;line-height:1.1}
 .btn:active{transform:translateY(1px) scale(.99)}
@@ -648,6 +632,55 @@ h1 em,h2 em{font-style:italic;font-weight:500;color:var(--acc-text)}
 .shop-hero{padding:1rem 0 0}.shop-hero h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:500}
 .ftr{background:#EDE4D6}
 
+/* ===== Atelier Olfactif & Pyramide des Notes ===== */
+.atelier{background:var(--surface);border:1px solid var(--line);border-radius:var(--r,16px);padding:clamp(1.4rem,3.5vw,2.5rem)}
+.atelier-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.atelier-panel{display:grid;grid-template-columns:1fr 1.2fr;gap:2.5rem;align-items:center}
+@media (max-width:860px){.atelier-panel{grid-template-columns:1fr;gap:1.5rem}}
+.atelier-media{position:relative;border-radius:var(--r,12px);overflow:hidden;background:var(--sec);aspect-ratio:1}
+.atelier-media img{width:100%;height:100%;object-fit:cover}
+.pyr-levels{display:grid;gap:.9rem;margin:1.4rem 0}
+.pyr-lvl{background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--acc);padding:.9rem 1.1rem;border-radius:6px}
+.pyr-lvl-h{display:flex;justify-content:space-between;align-items:center;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--acc-text);margin-bottom:.3rem}
+.pyr-lvl-notes{font-size:.95rem;font-weight:600;color:var(--fg)}
+.pyr-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0;padding-top:1.2rem;border-top:1px solid var(--line)}
+@media (max-width:560px){.pyr-metrics{grid-template-columns:1fr 1fr}}
+.pyr-metric{font-size:.82rem}
+.pyr-metric b{display:block;font-size:1.05rem;color:var(--fg);margin-top:.2rem}
+
+/* ===== Simulateur de Livraison par Quartier ===== */
+.sim-box{background:var(--bg);border:1px solid var(--line);padding:clamp(1.2rem,3vw,2rem);border-radius:var(--r,12px);margin-top:1.2rem}
+.sim-res{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--line)}
+.sim-item{background:var(--surface);border:1px solid var(--line);padding:1rem;border-radius:8px;font-size:.86rem}
+.sim-item svg{width:22px;height:22px;color:var(--acc-text);margin-bottom:.4rem;display:block}
+.sim-item b{display:block;font-size:.95rem;color:var(--fg);margin-bottom:.2rem}
+
+/* ===== Rituel d'Unboxing en 4 Étapes ===== */
+.ritual-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem;margin-top:1.8rem}
+.ritual-card{background:var(--surface);border:1px solid var(--line);padding:1.6rem;position:relative;display:flex;flex-direction:column;gap:.6rem}
+.ritual-num{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;background:var(--sec);color:#F5EFE6;font-family:var(--fd);font-size:1.15rem;font-weight:700;border:1px solid var(--acc);margin-bottom:.4rem}
+.ritual-card h3{font-size:1.15rem;margin:0;font-weight:600}
+.ritual-card p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.55}
+
+/* ===== Comparateur de Coffrets ===== */
+.comp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:1.5rem;border:1px solid var(--line);background:var(--surface)}
+.comp-tbl{width:100%;border-collapse:collapse;text-align:left;font-size:.88rem;min-width:680px}
+.comp-tbl th,.comp-tbl td{padding:.9rem 1.1rem;border-bottom:1px solid var(--line)}
+.comp-tbl th{background:var(--sec);color:#F5EFE6;font-family:var(--fd);font-weight:600;font-size:1rem;letter-spacing:.02em}
+.comp-tbl tr:last-child td{border-bottom:0}
+.comp-tbl td b{color:var(--fg)}
+.comp-badge{display:inline-block;padding:.2rem .5rem;background:rgba(184,115,51,.15);color:var(--acc-text);font-size:.75rem;font-weight:700;text-transform:uppercase}
+
+/* ===== Ingrédients & Terroir Bénin ===== */
+.terroir{background:#172D24;color:#F5EFE6;padding:clamp(3.5rem,7vw,5.5rem) 0}
+.terroir h2{font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:500}
+.terroir .eyebrow{color:#E5AA78}
+.terroir-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:2.5rem}
+.terroir-card{background:rgba(255,255,255,.04);border:1px solid rgba(229,170,120,.2);padding:1.6rem}
+.terroir-card svg{width:32px;height:32px;color:#E5AA78;margin-bottom:1rem}
+.terroir-card h3{font-family:var(--fd);font-size:1.4rem;color:#FFF2DD;margin-bottom:.5rem}
+.terroir-card p{font-size:.92rem;color:#DCD3C4;line-height:1.6;margin:0}
+
 </style>
 </head>
 <body>
@@ -655,7 +688,7 @@ h1 em,h2 em{font-style:italic;font-weight:500;color:var(--acc-text)}
 <div class="promo" role="region" aria-label="Offre en cours"><span>Écrin cuivré texturé &amp; mot calligraphié offerts</span><span class="dm">·</span><span class="dm">Livraison garantie avant Noël pour toute commande passée avant le 21 décembre (23&nbsp;h&nbsp;59)</span></div>
 <header class="hdr"><div class="wrap">
 <a class="logo" href="#/" aria-label="Parfums de Fête, accueil"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="13" y="14" width="14" height="20" rx="3" fill="none" stroke="var(--sec)" stroke-width="1.8"/><rect x="16.5" y="7" width="7" height="7" fill="var(--acc)"/><path d="M16 24h8" stroke="var(--acc)" stroke-width="1.8"/></svg><span>Parfums <em style="font-weight:400">de</em> Fête</span></a>
-<nav class="nav" aria-label="Navigation principale"><a href="#guide">Guide cadeau (30 s)</a><a href="#/boutique">Coffrets</a><a href="#carte">Carte cadeau</a><a href="#emballage">L&#x27;écrin de Noël</a></nav>
+<nav class="nav" aria-label="Navigation principale"><a href="#guide">Guide cadeau (30 s)</a><a href="#atelier">Atelier olfactif</a><a href="#/boutique">Coffrets</a><a href="#emballage">L'écrin de fête</a><a href="#livraison">Livraison &amp; Délais</a><a href="#carte">Carte cadeau</a></nav>
 <button class="cart-btn" data-open-cart aria-label="Ouvrir le panier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-label">Panier</span><span class="cart-count">0</span></button>
 <button class="burger-btn" data-toggle-nav aria-label="Ouvrir le menu de navigation" aria-expanded="false"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
 </div></header>
@@ -667,11 +700,14 @@ h1 em,h2 em{font-style:italic;font-weight:500;color:var(--acc-text)}
   </div>
   <div class="mobile-nav-b">
     <a href="#guide" data-nav-link>Guide cadeau express (30 s)</a>
+    <a href="#atelier" data-nav-link>Atelier olfactif &amp; Pyramides</a>
     <a href="#/boutique" data-nav-link>Tous les coffrets de Noël</a>
     <a href="#/boutique/elle" data-nav-link>Pour elle</a>
     <a href="#/boutique/lui" data-nav-link>Pour lui</a>
-    <a href="#carte" data-nav-link>E-Carte cadeau en 60 s</a>
     <a href="#emballage" data-nav-link>L'écrin &amp; mot calligraphié</a>
+    <a href="#livraison" data-nav-link>Simulateur livraison Cotonou</a>
+    <a href="#carte" data-nav-link>E-Carte cadeau en 60 s</a>
+    <a href="#comparateur" data-nav-link>Comparateur de coffrets</a>
     <a href="#faq" data-nav-link>Foire aux questions</a>
   </div>
   <div class="mobile-nav-f">
@@ -688,7 +724,7 @@ h1 em,h2 em{font-style:italic;font-weight:500;color:var(--acc-text)}
  <img class="hero-img" src="img/hero.webp" alt="Flacons de parfum, coffret cuivré et guirlande lumineuse sur un drapé crème" width="1600" height="900" fetchpriority="high">
  <div class="wrap hero-in">
   <span class="eyebrow">Noël 2026 · Coffrets d'exception à Cotonou</span>
-  <h1>Offrez un souvenir<br><span class="calligraphy-stage"><span class="calligraphy-word" id="hero-script" data-words='["qui se respire.","qui fait briller les yeux.","qui traverse le temps.","qui sublime le Réveillon."]'>qui se respire.</span><span class="quill-nib" aria-hidden="true">✒️</span><svg class="calligraphy-stroke draw" id="hero-stroke" viewBox="0 0 280 20" preserveAspectRatio="none" aria-hidden="true"><path d="M 3 14 C 60 4, 150 18, 275 8 C 210 18, 110 15, 35 12" /></svg></span></h1>
+  <h1>Offrez un souvenir<br><span class="calligraphy-stage"><span class="calligraphy-word" id="hero-script" data-words='["qui se respire.","qui fait briller les yeux.","qui traverse le temps.","qui sublime le Réveillon."]'>qui se respire.</span><span class="quill-nib" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="color:#E5AA78;display:inline-block;vertical-align:middle"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></span><svg class="calligraphy-stroke draw" id="hero-stroke" viewBox="0 0 280 20" preserveAspectRatio="none" aria-hidden="true"><path d="M 3 14 C 60 4, 150 18, 275 8 C 210 18, 110 15, 35 12" /></svg></span></h1>
   <p class="lead">Parfums de niche et soins précieux au karité bio, formulés pour le climat côtier. Livrés dans leur écrin cuivré texturé, avec vos mots calligraphiés à la plume.</p>
   <div class="hero-cta"><a class="btn btn-acc" href="#guide">Trouver mon coffret (30 s)</a><a class="btn btn-ghost" href="#/boutique">Explorer la collection</a></div>
   <p class="cd-line"><span class="cd-label" data-cd-label></span> <span class="cd" data-cd></span></p>
@@ -718,6 +754,59 @@ h1 em,h2 em{font-style:italic;font-weight:500;color:var(--acc-text)}
  </div>
 </div></section>
 
+<!-- Atelier Olfactif & Pyramide des Notes -->
+<section class="sec" id="atelier"><div class="wrap">
+ <div class="sec-h rv">
+  <div>
+   <span class="eyebrow">L'Atelier des Fragrances</span>
+   <h2>Explorez les pyramides olfactives &amp; la tenue sur peau</h2>
+   <p class="muted" style="max-width:56ch;margin-top:.4rem">Composées avec des essences nobles hautement concentrées (18% à 20%), nos fragrances sont formulées pour offrir un sillage persistant de 10 heures sous la chaleur tropicale.</p>
+  </div>
+ </div>
+ <div class="atelier rv" id="atelier-app">
+  <div class="atelier-tabs" id="atelier-tabs">
+   <button class="chip" data-pyr="oud-vanille" aria-pressed="true">Oud Vanille</button>
+   <button class="chip" data-pyr="nuit-ambre" aria-pressed="false">Nuit d'Ambre</button>
+   <button class="chip" data-pyr="homme" aria-pressed="false">Baobab Homme</button>
+   <button class="chip" data-pyr="bougie" aria-pressed="false">Harmattan &amp; Santal</button>
+  </div>
+  <div class="atelier-panel" id="atelier-panel"></div>
+ </div>
+</div></section>
+
+<!-- Le Rituel de l'Écrin de Fête -->
+<section class="sec" id="rituel" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+ <div class="sec-h rv" style="text-align:center;justify-content:center">
+  <div>
+   <span class="eyebrow">L'Artisanat de Noël</span>
+   <h2>Le rituel de votre coffret en 4 attentions précieuses</h2>
+   <p class="muted" style="margin:.4rem auto 0;max-width:54ch">Rien n'est laissé au hasard. Votre cadeau arrive prêt à éblouir, sans aucun stress logistique.</p>
+  </div>
+ </div>
+ <div class="ritual-grid rv">
+  <div class="ritual-card">
+   <div class="ritual-num">1</div>
+   <h3>Échantillon testeur 2 ml offert</h3>
+   <p>Glissé sur le dessus de l'écrin pour essayer le parfum sans briser le sceau du flacon. Échange sans frais jusqu'au 15 janvier si la note ne convient pas.</p>
+  </div>
+  <div class="ritual-card">
+   <div class="ritual-num">2</div>
+   <h3>Écrin cuivré texturé</h3>
+   <p>Boîte rigide confectionnée à la main avec finitions gaufrées cuivrées et lit protecteur en velours doux pour magnifier les flacons.</p>
+  </div>
+  <div class="ritual-card">
+   <div class="ritual-num">3</div>
+   <h3>Mot calligraphié à la plume</h3>
+   <p>Votre mot personnalisé est retranscrit à la main à l'encre cuivrée sur un papier vélin en pur coton épais. Zéro impression laser impersonnelle.</p>
+  </div>
+  <div class="ritual-card">
+   <div class="ritual-num">4</div>
+   <h3>Colis discret &amp; 100% anonyme</h3>
+   <p>Remise en main propre par coursier privé. Aucun prix n'est affiché sur le paquet, préservant la surprise intégrale pour le destinataire.</p>
+  </div>
+ </div>
+</div></section>
+
 <section class="sec emb" id="emballage"><div class="wrap emb-in">
  <figure class="rv"><img src="img/karite.webp" alt="Coffret rituel karité dans son écrin cuivré noué d'un ruban" width="800" height="800" loading="lazy"></figure>
  <div class="rv">
@@ -730,6 +819,32 @@ h1 em,h2 em{font-style:italic;font-weight:500;color:var(--acc-text)}
    <li><b>Livraison coursier en main propre</b> : à domicile ou au bureau partout à Cotonou, Calavi et Porto-Novo.</li>
   </ol>
   <a class="btn btn-acc" href="#/boutique">Découvrir tous les coffrets</a>
+ </div>
+</div></section>
+
+<!-- Simulateur de Livraison & Délais par Quartier -->
+<section class="sec" id="livraison"><div class="wrap">
+ <div class="sec-h rv">
+  <div>
+   <span class="eyebrow">Transparence &amp; Ponctualité</span>
+   <h2>Estimez votre livraison par quartier à Cotonou</h2>
+   <p class="muted" style="max-width:54ch;margin-top:.4rem">Commandez en toute confiance : sélectionnez votre zone pour voir le délai exact de notre coursier et les modes de règlement sur place.</p>
+  </div>
+ </div>
+ <div class="sim-box rv">
+  <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center">
+   <label for="zone-select" style="font-weight:700;font-size:.92rem">Votre quartier ou ville :</label>
+   <select id="zone-select" class="select" style="min-width:240px">
+    <option value="akpakpa">Akpakpa &amp; Environs</option>
+    <option value="haievive">Haie Vive &amp; Les Cocotiers</option>
+    <option value="fidjrosse">Fidjrossè &amp; Plage</option>
+    <option value="cadjehoun">Cadjehoun &amp; Ganhi</option>
+    <option value="calavi">Abomey-Calavi &amp; Godomey</option>
+    <option value="portonovo">Porto-Novo &amp; Ouando</option>
+    <option value="parakou">Parakou &amp; Nord Bénin</option>
+   </select>
+  </div>
+  <div class="sim-res" id="zone-info"></div>
  </div>
 </div></section>
 
@@ -754,6 +869,107 @@ h1 em,h2 em{font-style:italic;font-weight:500;color:var(--acc-text)}
    <p class="gc-msg" id="gc-msg"></p>
    <p class="gc-from" id="gc-from"></p>
    <span class="gc-code">N° PDF-2026-XMAS · Valable 12 mois sur tout le catalogue</span>
+  </div>
+ </div>
+</div></section>
+
+<!-- Tableau Comparateur des Créations de Noël -->
+<section class="sec" id="comparateur"><div class="wrap">
+ <div class="sec-h rv">
+  <div>
+   <span class="eyebrow">Comparateur express</span>
+   <h2>Toutes nos créations en un coup d'œil</h2>
+   <p class="muted" style="max-width:54ch;margin-top:.4rem">Comparez les familles olfactives, la tenue certifiée et les tarifs pour choisir sans la moindre hésitation.</p>
+  </div>
+ </div>
+ <div class="comp-wrap rv">
+  <table class="comp-tbl">
+   <thead>
+    <tr>
+     <th>Création</th>
+     <th>Famille olfactive</th>
+     <th>Tenue certifiée</th>
+     <th>Idéal pour</th>
+     <th>Tarif FCFA</th>
+     <th>Action</th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td><b>Oud Vanille (50 ml)</b></td>
+     <td>Oriental boisé gourmand</td>
+     <td>10 heures sur peau</td>
+     <td>Soirées de réveillon &amp; Sillage signature</td>
+     <td><b>59 900 FCFA</b></td>
+     <td><button class="btn btn-acc btn-sm" data-add="oud-vanille">Offrir</button></td>
+    </tr>
+    <tr>
+     <td><b>Coffret Rituel Karité</b></td>
+     <td>Soin réparateur &amp; Baobab</td>
+     <td>Hydratation 24 h</td>
+     <td>Rituel Harmattan visage &amp; corps</td>
+     <td><b>34 900 FCFA</b></td>
+     <td><button class="btn btn-acc btn-sm" data-add="karite">Offrir</button></td>
+    </tr>
+    <tr>
+     <td><b>Nuit d'Ambre (50 ml)</b></td>
+     <td>Ambré floral solaire</td>
+     <td>9 heures sur peau</td>
+     <td>Femmes de caractère &amp; Nuits festives</td>
+     <td><b>44 900 FCFA</b></td>
+     <td><button class="btn btn-acc btn-sm" data-add="nuit-ambre">Offrir</button></td>
+    </tr>
+    <tr>
+     <td><b>Baobab Homme (50 ml)</b></td>
+     <td>Boisé épicé cuiré</td>
+     <td>10 heures sur peau</td>
+     <td>Hommes élégants &amp; Affaires</td>
+     <td><b>49 900 FCFA</b></td>
+     <td><button class="btn btn-acc btn-sm" data-add="homme">Offrir</button></td>
+    </tr>
+    <tr>
+     <td><b>Bougie Harmattan (220 g)</b></td>
+     <td>Santal crémeux &amp; Épices</td>
+     <td>45 h de combustion</td>
+     <td>Veillées de fête &amp; Ambiance feutrée</td>
+     <td><b>14 900 FCFA</b></td>
+     <td><button class="btn btn-acc btn-sm" data-add="bougie">Offrir</button></td>
+    </tr>
+    <tr>
+     <td><b>Trio Découverte (3 × 10 ml)</b></td>
+     <td>Coffret multi-sillages</td>
+     <td>Format voyage nomade</td>
+     <td>Découvrir sans hésiter + Bon 5 000 F</td>
+     <td><b>19 900 FCFA</b></td>
+     <td><button class="btn btn-acc btn-sm" data-add="trio">Offrir</button></td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+</div></section>
+
+<!-- Terroir & Ingrédients Éthiques du Bénin -->
+<section class="terroir" id="terroir"><div class="wrap">
+ <div class="rv" style="text-align:center">
+  <span class="eyebrow">Terroir &amp; Savoir-faire</span>
+  <h2>Des matières nobles récoltées avec respect au Bénin</h2>
+  <p style="color:#DCD3C4;max-width:58ch;margin:0 auto">Nous unissons les trésors botaniques de l'Afrique de l'Ouest à la haute parfumerie pour des créations qui respectent votre peau et valorisent les filières locales.</p>
+ </div>
+ <div class="terroir-grid rv">
+  <div class="terroir-card">
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+   <h3>Karité Sauvage de Djougou</h3>
+   <p>Récolté et fouetté artisanalement par les coopératives de femmes du Nord Bénin. Un beurre 100% pur non raffiné qui conserve toutes ses vitamines réparatrices pour affronter l'harmattan.</p>
+  </div>
+  <div class="terroir-card">
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+   <h3>Huile Pure de Baobab</h3>
+   <p>Pressée à froid selon des méthodes traditionnelles préservant son fini satiné et son toucher sec immédiat. Idéale pour nourrir les cheveux et illuminer la peau avant le Réveillon.</p>
+  </div>
+  <div class="terroir-card">
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+   <h3>Éco-Luxe sans Plastique</h3>
+   <p>Flacons rechargeables en verre lourd, coffrets rigides recyclables et rubans en pure fibre naturelle. Une démarche d'élégance responsable d'un bout à l'autre de l'expérience.</p>
   </div>
  </div>
 </div></section>
@@ -815,14 +1031,6 @@ h1 em,h2 em{font-style:italic;font-weight:500;color:var(--acc-text)}
   <button class="live-close" id="live-close" aria-label="Fermer la notification">×</button>
 </div>
 
-<!-- Mobile bottom action bar -->
-<nav class="mobile-bar" aria-label="Navigation mobile rapide">
-  <a href="#guide" class="mbar-item" data-nav-link><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 8v13M12 8S10 3 7.5 4.5 9 8 12 8zm0 0s2-5 4.5-3.5S15 8 12 8zM3 8h18v4H3z"/><path d="M5 12v9h14v-9"/></svg><span>Guide</span></a>
-  <a href="#/boutique" class="mbar-item" data-nav-link><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span>Coffrets</span></a>
-  <a href="#carte" class="mbar-item" data-nav-link><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg><span>Carte</span></a>
-  <button class="mbar-item" data-open-cart aria-label="Ouvrir le panier"><div class="mbar-cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-count">0</span></div><span>Panier</span></button>
-  <a href="https://wa.me/?text=Bonjour%20Parfums%20de%20F%C3%AAte%2C%20je%20souhaite%20un%20conseil%20cadeau" class="mbar-item" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.7.7-1 1.6-1 2.5.1 1.1.5 2.1 1.2 3 1.2 1.8 2.8 3.2 4.7 4 .5.2 1 .4 1.6.5.6.2 1.2.2 1.8.1.7-.1 1.4-.6 1.8-1.2.2-.4.2-.9.1-1.3z"/></svg><span>WhatsApp</span></a>
-</nav>
 <script>
 window.SITE={key:'pdf',brand:'Parfums de Fête',title:document.title,lowStock:5,freeShip:30000,shipFee:2000,
 event:{start:'2026-09-01T00:00:00+01:00',end:'2026-12-21T23:59:59+01:00',labels:{before:'Bientôt disponible',live:'Livraison garantie avant Noël : commandez dans',after:'Date limite dépassée : offrez la carte cadeau, envoyée en 1 minute sur WhatsApp'}},
@@ -896,6 +1104,72 @@ init(){
    cardEl.addEventListener('mouseleave',()=>{cardEl.style.transform='rotate(-2deg)'});
   }
   F.addEventListener('submit',e=>{e.preventDefault();const map={25000:'carte-25',50000:'carte-50',100000:'carte-100'};Q4.addToCart(map[amt()],1);});}
+
+  /* Atelier Olfactif Handler */
+  const atEl=document.getElementById('atelier-app');
+  if(atEl){
+   const pyrs={
+    'oud-vanille':{title:'Oud Vanille · Eau de parfum intense (20 %)',img:'img/oud-vanille.webp',tete:'Safran précieux, bergamote de Calabre, zeste d\'orange amère',coeur:'Oud noble fumé d\'Assam, rose de Damas, cannelle douce',fond:'Vanille bourbon pure, fève tonka grillée, ambre gris doux',tenue:'10 heures certifiées',sillage:'Chaud & Magnétique',climat:'Résistance prouvée à l\'humidité côtière',id:'oud-vanille',price:59900},
+    'nuit-ambre':{title:'Nuit d\'Ambre · Eau de parfum solaire (18 %)',img:'img/nuit-ambre.webp',tete:'Mandarine festive, baie rose givrée, néroli',coeur:'Jasmin sambac d\'Inde, tubéreuse solaire, fleur d\'oranger',fond:'Ambre blanc précieux, santal crémeux, musc blanc pur',tenue:'9 heures certifiées',sillage:'Envoutant & Floral',climat:'Parfait pour les soirées en plein air',id:'nuit-ambre',price:44900},
+    'homme':{title:'Baobab Homme · Eau de parfum racée (18 %)',img:'img/homme.webp',tete:'Poivre noir de Madagascar, pamplemousse givré, gingembre',coeur:'Géranium bourbon, cardamome verte, écorce de baobab',fond:'Vétiver fumé, cèdre noble de l\'Atlas, cuir souple',tenue:'10 heures certifiées',sillage:'Élégant & Boisé',climat:'Reste vivace toute la journée sans s\'altérer',id:'homme',price:49900},
+    'bougie':{title:'Harmattan & Santal · Bougie végétale (220 g)',img:'img/bougie.webp',tete:'Cardamome d\'hiver, zeste de clémentine festive',coeur:'Bois de santal crémeux, cannelle festive, clou de girofle',fond:'Cèdre blanc, ambre doux, cire de soja 100 % pure',tenue:'45 h de combustion',sillage:'Feutré & Réconfortant',climat:'Diffusion saine sans fumée noire',id:'bougie',price:14900}
+   };
+   const drawPyr=k=>{
+    const d=pyrs[k]||pyrs['oud-vanille'];
+    const pEl=document.getElementById('atelier-panel');
+    if(!pEl) return;
+    pEl.innerHTML=`<div class="atelier-media"><img src="${d.img}" alt="${d.title}" loading="lazy"></div>
+     <div>
+      <h3 style="font-size:1.6rem;font-weight:600;margin-bottom:.5rem">${d.title}</h3>
+      <div class="pyr-levels">
+       <div class="pyr-lvl"><div class="pyr-lvl-h"><span>1. Notes de Tête (0 à 30 min)</span><b>Fraîcheur d'ouverture</b></div><div class="pyr-lvl-notes">${d.tete}</div></div>
+       <div class="pyr-lvl"><div class="pyr-lvl-h"><span>2. Notes de Cœur (1 h à 6 h)</span><b>Signature noble</b></div><div class="pyr-lvl-notes">${d.coeur}</div></div>
+       <div class="pyr-lvl"><div class="pyr-lvl-h"><span>3. Notes de Fond (jusqu'à 10 h+)</span><b>Sillage mémorable</b></div><div class="pyr-lvl-notes">${d.fond}</div></div>
+      </div>
+      <div class="pyr-metrics">
+       <div class="pyr-metric"><span class="muted">Tenue sur peau</span><b>${d.tenue}</b></div>
+       <div class="pyr-metric"><span class="muted">Intensité sillage</span><b>${d.sillage}</b></div>
+       <div class="pyr-metric"><span class="muted">Climat côtier</span><b>${d.climat}</b></div>
+      </div>
+      <div style="display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;margin-top:1.2rem">
+       <button class="btn btn-acc" data-add="${d.id}">Offrir ce flacon · ${Q4.fcfa(d.price)}</button>
+       <a class="btn btn-ghost" href="#/produit/${d.id}">Consulter la fiche complète</a>
+      </div>
+     </div>`;
+   };
+   atEl.addEventListener('click',e=>{
+    const b=e.target.closest('[data-pyr]');
+    if(!b) return;
+    atEl.querySelectorAll('[data-pyr]').forEach(x=>x.setAttribute('aria-pressed',x===b));
+    drawPyr(b.dataset.pyr);
+   });
+   drawPyr('oud-vanille');
+  }
+
+  /* Simulateur de Livraison par Quartier */
+  const zSel=document.getElementById('zone-select');
+  const zInfo=document.getElementById('zone-info');
+  if(zSel&&zInfo){
+   const zones={
+    akpakpa:{name:'Akpakpa (PK3, PK6, Djidjè, Avotrou)',delay:'Sous 12 h à 24 h',fee:'2 000 FCFA (Offerte dès 30 000 F)',pay:'MTN MoMo, Moov, Celtiis, Espèces',note:'Créneau garanti avant le 24/12'},
+    haievive:{name:'Haie Vive, Cocotiers & Patte d\'Oie',delay:'Sous 12 h à 24 h',fee:'2 000 FCFA (Offerte dès 30 000 F)',pay:'MTN MoMo, Moov, Wave, Espèces',note:'Possibilité de livraison discrète au bureau'},
+    fidjrosse:{name:'Fidjrossè, Plage & Togbin',delay:'Sous 24 h',fee:'2 000 FCFA (Offerte dès 30 000 F)',pay:'MTN MoMo, Moov, Wave, Espèces',note:'Remise en main propre avec testeur'},
+    cadjehoun:{name:'Cadjehoun, Ganhi, Maro-Militaire',delay:'Sous 12 h à 24 h',fee:'2 000 FCFA (Offerte dès 30 000 F)',pay:'MTN MoMo, Moov, Celtiis, Espèces',note:'Inspection du coffret avec le coursier'},
+    calavi:{name:'Abomey-Calavi, Godomey, Tankpè, Arconville',delay:'Sous 24 h à 48 h',fee:'2 500 FCFA (Offerte dès 30 000 F)',pay:'MTN MoMo, Moov Money, Espèces',note:'Remise soignée à domicile ou point relais'},
+    portonovo:{name:'Porto-Novo, Ouando, Tokpota',delay:'Sous 48 h',fee:'3 000 FCFA (Offerte dès 45 000 F)',pay:'MTN MoMo, Moov Money, Wave',note:'Colis renforcé scellé'},
+    parakou:{name:'Parakou, Djougou, Natitingou',delay:'Sous 48 h à 72 h',fee:'4 000 FCFA (Offerte dès 60 000 F)',pay:'MTN MoMo, Moov Money, Wave',note:'Expédition par ligne de transport sécurisée'}
+   };
+   const drawZone=k=>{
+    const z=zones[k]||zones.akpakpa;
+    zInfo.innerHTML=`
+     <div class="sim-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="muted">Délai estimé</span><b>${z.delay}</b><span>${z.note}</span></div>
+     <div class="sim-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><span class="muted">Frais de coursier</span><b>${z.fee}</b><span>Écrin & carte offerts</span></div>
+     <div class="sim-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg><span class="muted">Règlement sur place</span><b>${z.pay}</b><span>Après vérification du colis</span></div>
+    `;
+   };
+   zSel.addEventListener('change',()=>drawZone(zSel.value));
+   drawZone(zSel.value);
+  }
 }};
 
 </script>
@@ -1026,7 +1300,7 @@ document.addEventListener('click',e=>{
 
 /* ===== micro-animation : vol d'article vers le panier ===== */
 function flyItemToCart(fromEl){
- const cartBtn = (window.innerWidth <= 768 ? $('.mobile-bar [data-open-cart]') : null) || $('.hdr .cart-btn');
+ const cartBtn = $('.hdr .cart-btn');
  if(!cartBtn || !fromEl) return;
  const fromRect = fromEl.getBoundingClientRect();
  const toRect = cartBtn.getBoundingClientRect();
@@ -1077,7 +1351,7 @@ function renderCart(){
  if(!cart.length){b.innerHTML=`<div class="empty">${IC.bag.replace('<svg','<svg width="48" height="48" style="margin:0 auto 1rem;opacity:.5"')}<p><b>Votre panier est vide.</b></p><p>${S.emptyCart||'Découvrez nos offres du moment.'}</p><a class="btn btn-acc" href="#/boutique" data-close>Voir la boutique</a></div>`;f.hidden=true;return}
  f.hidden=false;
  const s=sub(),free=S.freeShip,left=Math.max(0,free-s),ship=left?S.shipFee:0,disc=code?Math.round(s*code.pct/100):0;
- b.innerHTML=(!free?`<div class="ship"><span>${S.noShipText||'Aucun frais de livraison'}</span></div>`:`<div class="ship">${left?`<span>Plus que <b>${fcfa(left)}</b> pour la livraison offerte</span>`:`<span style="color:var(--acc-text);font-weight:800">✨ Félicitations ! Livraison offerte débloquée</span>`}<div class="bar"><i style="width:${Math.min(100,s/free*100)}%"></i></div></div>`)+
+ b.innerHTML=(!free?`<div class="ship"><span>${S.noShipText||'Aucun frais de livraison'}</span></div>`:`<div class="ship">${left?`<span>Plus que <b>${fcfa(left)}</b> pour la livraison offerte</span>`:`<span style="color:var(--acc-text);font-weight:800">Félicitations ! Livraison offerte débloquée</span>`}<div class="bar"><i style="width:${Math.min(100,s/free*100)}%"></i></div></div>`)+
  cart.map((l,i)=>{const p=P[l.id];return `<div class="line"><img src="${p.img||P[p.combo[0]].img}" alt="" width="64" height="64"><div><h4>${esc(p.name)}</h4>${l.opt?`<div class="muted" style="font-size:.8rem">${esc(l.opt)}</div>`:''}<div class="qty" style="margin-top:.35rem"><button data-cq="${i}" data-d="-1" aria-label="Moins">−</button><output>${l.qty}</output><button data-cq="${i}" data-d="1" aria-label="Plus">+</button></div></div><div style="text-align:right"><b class="tnum">${fcfa(p.price*l.qty)}</b><br><button class="rm" data-rm="${i}">Retirer</button></div></div>`}).join('');
  f.innerHTML=`<div class="code-row"><input id="code" placeholder="Code promo (ex : ECRIN10)" aria-label="Code promo" value="${code?code.c:''}"><button class="btn btn-ghost btn-sm" data-code>Appliquer</button></div>
  <div class="tot"><span>Sous-total</span><span class="tnum">${fcfa(s)}</span></div>
@@ -1268,22 +1542,44 @@ function route(){
  else if(v==='product')renderProduct(arg);
  else document.title=S.title;
  $$('.nav a').forEach(a=>a.toggleAttribute('aria-current',a.getAttribute('href')===(h||'#/')));
- $$('.mobile-bar .mbar-item').forEach(a=>{
-  const href=a.getAttribute('href');
-  a.classList.toggle('active',href===(h||'#/'));
- });
+ $$('.mobile-nav-b a').forEach(a=>a.toggleAttribute('aria-current',a.getAttribute('href')===(h||'#/')));
  if(v!=='product')$('.sticky-buy').classList.remove('show');
  closeCart(); window.scrollTo(0,0);
  const hh=$(`[data-view="${v}"] h1`); if(hh&&v!=='home'){hh.setAttribute('tabindex','-1');hh.focus({preventScroll:true})}
- S.onRoute&&S.onRoute(v,arg); reveal();
+ S.onRoute&&S.onRoute(v,arg);
+ setTimeout(reveal, 50);
 }
 function show(v){$$('[data-view]').forEach(s=>s.hidden=s.dataset.view!==v);document.body.classList.toggle('on-pdp',v==='product')}
 addEventListener('hashchange',route);
 
-/* ===== reveal ===== */
-let io; function reveal(){ if(!('IntersectionObserver' in window)){$$('.rv').forEach(e=>e.classList.add('in'));return}
- io=io||new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
- $$('.rv:not(.in)').forEach(e=>io.observe(e)); }
+/* ===== reveal & micro-apparitions (fiable en mode PC & mobile) ===== */
+let io;
+function reveal(){
+ const list = $$('.rv:not(.in)');
+ if(!list.length) return;
+ const vh = window.innerHeight || document.documentElement.clientHeight || 900;
+ list.forEach(el => {
+  const r = el.getBoundingClientRect();
+  if(r.top < vh + 250){
+   el.classList.add('in');
+  }
+ });
+ if(!('IntersectionObserver' in window)){
+  list.forEach(el => el.classList.add('in'));
+  return;
+ }
+ io = io || new IntersectionObserver(entries => {
+  entries.forEach(e => {
+   if(e.isIntersecting){
+    e.target.classList.add('in');
+    io.unobserve(e.target);
+   }
+  });
+ }, { rootMargin: '150px 0px 80px 0px', threshold: 0.01 });
+ $$('.rv:not(.in)').forEach(el => io.observe(el));
+}
+addEventListener('scroll', reveal, { passive: true });
+addEventListener('resize', reveal, { passive: true });
 
 /* sticky pdp bar visibility */
 addEventListener('scroll',()=>{const b=$('[data-add-cur]:not(.sticky-buy *)');const sb=$('.sticky-buy');if(!b||!document.body.classList.contains('on-pdp'))return;const r=b.getBoundingClientRect();sb.classList.toggle('show',r.bottom<0||r.top>innerHeight)},{passive:true});
@@ -1298,6 +1594,7 @@ S.init&&S.init();
 $$('[data-grid]').forEach(el=>{const ids=el.dataset.grid.split(',');renderGrid(el,ids.map(i=>P[i]).filter(Boolean))});
 renderCart();tick();setInterval(tick,1000);route();
 initCalligraphy();initCardTilt();initLivePill();initMobileNav();
+reveal();
 $('#yr')&&($('#yr').textContent=new Date().getFullYear());
 })();
 
